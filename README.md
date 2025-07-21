@@ -92,6 +92,25 @@
     </p>
     <script>
       let calculation = '';
+      function append(char) {
+        calculation += char;
+        document.getElementById('display').value = calculation;
+      }
+
+      function calculate() {
+        try {
+          calculation = eval(calculation).toString();
+          document.getElementById('display').value = calculation;
+        } catch {
+          document.getElementById('display').value = "Error";
+          calculation = '';
+        }
+      }
+      function clearCalc() {
+        calculation = '';
+        document.getElementById('display').value = '';
+      }
+
     </script>
   </body> 
 </html>
